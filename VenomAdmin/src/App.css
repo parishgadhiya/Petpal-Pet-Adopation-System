@@ -1,0 +1,90 @@
+/* Admin Dashboard Premium Styles */
+
+:root {
+  --admin-blue: #001d3d;
+  --admin-orange: #f87d47;
+  --admin-gray: #f8f9fa;
+  --admin-border: #e1e5eb;
+  --admin-text: #2d3748;
+}
+
+body {
+  background-color: #f4f7fa;
+  font-family: 'Inter', sans-serif;
+  color: var(--admin-text);
+  overflow-x: hidden;
+  margin: 0;
+}
+
+#layout-wrapper {
+  display: flex;
+}
+
+.main-content {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  min-height: 100vh;
+  padding-top: 70px;
+  transition: all 0.3s ease;
+}
+
+.page-content {
+  padding: 30px;
+}
+
+/* Premium Cards */
+.card {
+  border: none;
+  border-radius: 15px !important;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.03) !important;
+  transition: all 0.3s ease !important;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
+}
+
+.bg-soft-primary { background-color: rgba(0, 29, 61, 0.05) !important; }
+.bg-soft-success { background-color: rgba(34, 197, 94, 0.05) !important; }
+.bg-soft-warning { background-color: rgba(245, 158, 11, 0.05) !important; }
+.bg-soft-info { background-color: rgba(59, 130, 246, 0.05) !important; }
+
+/* Table Styling */
+.table-responsive {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table thead th {
+  background-color: var(--admin-gray) !important;
+  border-bottom: 2px solid var(--admin-border) !important;
+  color: #718096 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 15px !important;
+}
+
+.table tbody td {
+  padding: 15px !important;
+  border-bottom: 1px solid var(--admin-border) !important;
+  vertical-align: middle;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
