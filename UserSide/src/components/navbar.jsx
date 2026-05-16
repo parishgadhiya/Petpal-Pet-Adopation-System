@@ -11,6 +11,7 @@ function Nav() {
   const [userData, setUserData] = useState(null);
   const [cartCount, setCartCount] = useState(0);
   const [wishlistCount, setWishlistCount] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   // Fetch Cart Count
   const fetchCartCount = async () => {
 
@@ -95,9 +96,36 @@ function Nav() {
             <div className="col-lg-12">
               <div className="tgmenu__wrap">
                 <div className="row align-items-center">
-                  {/* LEFT MENU */}
-                  <div className="col-xl-6">
-                    <div className="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
+                  {/* LOGO */}
+                  <div className="col-xl-2 col-6">
+                    <div className="logo text-start text-xl-center">
+                      <Link to="/">
+                        <img
+                          src="/petpal/assets/img/logo/w_logo.png"
+                          alt="Logo"
+                        />
+                      </Link>
+                    </div>
+                  </div>
+
+                  {/* MOBILE CONTROLS */}
+                  <div className="col-6 d-xl-none text-end">
+                    <div className="d-flex align-items-center justify-content-end">
+                      <Link to="/cart" className="me-3 text-white position-relative">
+                        <i className="flaticon-shopping-bag" style={{ fontSize: "20px" }} />
+                        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style={{ fontSize: "10px" }}>
+                          {cartCount}
+                        </span>
+                      </Link>
+                      <button className="btn btn-link text-white p-0" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                        <i className="fa-solid fa-bars" style={{ fontSize: "24px" }} />
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* DESKTOP MENU */}
+                  <div className="col-xl-6 d-none d-xl-block">
+                    <div className="tgmenu__navbar-wrap tgmenu__main-menu d-flex">
                       <ul className="navigation">
                         <li className="menu-item-has-children">
                           <a href="#">Home</a>
@@ -179,21 +207,9 @@ function Nav() {
                     </div>
                   </div>
 
-                  {/* LOGO */}
-                  <div className="col-xl-2 col-md-4">
-                    <div className="logo text-center">
-                      <Link to="/">
-                        <img
-                          src="/petpal/assets/img/logo/w_logo.png"
-                          alt="Logo"
-                        />
-                      </Link>
-                    </div>
-                  </div>
-
-                  {/* RIGHT SIDE */}
-                  <div className="col-xl-4 col-md-8">
-                    <div className="tgmenu__action tgmenu__action-two d-none d-md-block">
+                  {/* DESKTOP RIGHT SIDE */}
+                  <div className="col-xl-4 d-none d-xl-block">
+                    <div className="tgmenu__action tgmenu__action-two">
                       <ul className="list-wrap">
                         <li className="header-cart dropdown">
                           <NotificationDropdown isAdmin={false} />
@@ -212,7 +228,6 @@ function Nav() {
                           </Link>
                         </li>
 
-                        {/* ✅ Dynamic Login / Profile */}
                         {!user ? (
                           <li className="header-btn login-btn">
                             <Link to="/login" className="btn">
@@ -230,6 +245,43 @@ function Nav() {
                       </ul>
                     </div>
                   </div>
+
+                  {/* MOBILE MENU DROPDOWN */}
+                  {isMobileMenuOpen && (
+                    <div className="col-12 d-xl-none mt-2">
+                      <div className="bg-dark text-white p-3 rounded">
+                        <ul className="list-unstyled mb-0">
+                          <li className="mb-2">
+                            <Link to="/About" className="text-white" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
+                          </li>
+                          <li className="mb-2">
+                            <Link to="/Ourshop" className="text-white" onClick={() => setIsMobileMenuOpen(false)}>Shop</Link>
+                          </li>
+                          <li className="mb-2">
+                            <Link to="/Pets" className="text-white" onClick={() => setIsMobileMenuOpen(false)}>All Pets</Link>
+                          </li>
+                          <li className="mb-2">
+                            <Link to="/contact" className="text-white" onClick={() => setIsMobileMenuOpen(false)}>Contacts</Link>
+                          </li>
+                          {user ? (
+                            <>
+                              <li className="mb-2">
+                                <Link to="/UserProfile" className="text-white" onClick={() => setIsMobileMenuOpen(false)}>Profile</Link>
+                              </li>
+                              <li>
+                                <button className="btn btn-sm btn-outline-light" onClick={() => { handleLogout(); setIsMobileMenuOpen(false); }}>Logout</button>
+                              </li>
+                            </>
+                          ) : (
+                            <li>
+                              <Link to="/login" className="btn btn-sm btn-primary" onClick={() => setIsMobileMenuOpen(false)}>Login</Link>
+                            </li>
+                          )}
+                        </ul>
+                      </div>
+                    </div>
+                  )}
+
                 </div>
               </div>
             </div>

@@ -88,3 +88,34 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.2);
 }
+
+/* Mobile Overrides for Admin */
+@media (max-width: 991px) {
+  /* Hide sidebar on mobile */
+  .vertical-menu {
+    transform: translateX(-100%) !important;
+    transition: transform 0.3s ease !important;
+  }
+  
+  /* Show sidebar when body has class */
+  body.sidebar-enable .vertical-menu {
+    transform: translateX(0) !important;
+  }
+  
+  /* Make main content full width */
+  .main-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  
+  /* Fix header position */
+  #page-topbar {
+    left: 0 !important;
+    padding: 0 15px !important;
+  }
+  
+  /* Fix search bar width on mobile */
+  .app-search input {
+    width: 150px !important;
+  }
+}

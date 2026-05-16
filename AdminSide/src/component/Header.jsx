@@ -76,6 +76,7 @@ function Header() {
             type="button"
             className="btn px-3 font-size-16 header-item waves-effect"
             style={{ border: "none", background: "transparent", color: "#555", marginRight: "10px" }}
+            onClick={() => document.body.classList.toggle("sidebar-enable")}
           >
             <i className="fa fa-fw fa-bars" />
           </button>
