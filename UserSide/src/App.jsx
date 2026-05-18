@@ -7,11 +7,10 @@ import Contact from "./pages/Contact";
 import Register from "./pages/register";
 import "./App.css";
 import Login from "./pages/login";
-import Gallery from "./pages/gallery";
+import Gallery from "./pages/Gallery";
 import Pets from "./pages/Pets";
 import Petdetails from "./pages/Petdetails";
 import Productdetails from "./pages/Productdetails";
-
 
 import Index from "./Home/Index";
 import DonatePet from "./pages/DonatePet";
