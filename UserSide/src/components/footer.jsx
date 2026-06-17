@@ -11,7 +11,7 @@ function Footer() {
               <div className="col-xl-3 col-lg-4 col-md-6">
                 <div className="footer__widget">
                   <div className="footer__logo">
-                    <Link to="/Index"><img src="petpal/assets/img/logo/w_logo.png" alt="" /></Link>
+                    <Link to="/Index"><img src="/petpal/assets/img/logo/w_logo.png" alt="" /></Link>
                   </div>
                   <div className="footer__content footer__content-two">
                     <p>Duis aute irure dolor in repreerit in voluptate velitesse We understand that your furry friend tred member</p>
@@ -71,8 +71,8 @@ function Footer() {
             </div>
           </div>
           <div className="footer__shape-wrap">
-            <img src="petpal/assets/img/images/footer_shape01.png" alt="img" data-aos="fade-up-right" data-aos-delay={400} />
-            <img src="petpal/assets/img/images/footer_shape02.png" alt="img" data-aos="fade-up-left" data-aos-delay={400} />
+            <img src="/petpal/assets/img/images/footer_shape01.png" alt="img" data-aos="fade-up-right" data-aos-delay={400} />
+            <img src="/petpal/assets/img/images/footer_shape02.png" alt="img" data-aos="fade-up-left" data-aos-delay={400} />
           </div>
         </div>
         <div className="footer__bottom footer__bottom-two">

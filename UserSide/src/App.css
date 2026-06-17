@@ -42,4 +42,54 @@
     max-width: 100%;
     height: auto;
   }
+
+  /* Login and Register Cards responsiveness */
+  .login-card, .register-card {
+    width: 100% !important;
+    max-width: 380px !important;
+    padding: 20px !important;
+    border-radius: 12px !important;
+    box-sizing: border-box;
+    margin: 20px auto !important;
+  }
+  
+  .login-page, .register-page {
+    padding: 15px !important;
+    min-height: auto !important;
+  }
+
+  /* User Profile responsiveness */
+  .section-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 15px !important;
+  }
+  
+  .main__content-wrap {
+    padding: 20px !important;
+    border-radius: 16px !important;
+  }
+  
+  .profile__sidebar {
+    border-radius: 16px !important;
+  }
+
+  /* Customer Chat responsiveness */
+  .chat-container {
+    border-radius: 12px !important;
+  }
+  
+  .chat-container .card-body {
+    padding: 15px !important;
+    height: 400px !important;
+  }
+  
+  .chat-container .message-wrapper {
+    max-width: 85% !important;
+  }
+
+  /* Breadcrumb Spacing */
+  .breadcrumb__area {
+    padding: 60px 0 60px !important;
+  }
 }

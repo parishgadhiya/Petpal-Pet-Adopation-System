@@ -165,8 +165,8 @@ function Header() {
               transition: "all 0.2s"
             }}
           >
-            <i className="fa-solid fa-arrow-right-from-bracket mr-2"></i>
-            Logout
+            <i className="fa-solid fa-arrow-right-from-bracket"></i>
+            <span className="d-none d-sm-inline ms-2">Logout</span>
           </button>
         </div>
       </div>

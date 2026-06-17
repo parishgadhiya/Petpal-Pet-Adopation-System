@@ -94,7 +94,7 @@ function Petdetails() {
                     <div className="mt-1">
                       Age : <strong>{pet.age}</strong>
                     </div>
-                    <div className="product__details-qty">
+                    <div className="product__details-qty d-flex flex-wrap gap-2 align-items-center">
                       <Link
                         to={`/rules/${pet.id}`}
                         className="btn btn-primary mt-3 d-inline-flex align-items-center justify-content-center"
@@ -107,7 +107,7 @@ function Petdetails() {
                       <Link
                         to={`/chat?petId=${pet.id}&petName=${pet.name}`}
                         className="btn btn-secondary mt-3 d-inline-flex align-items-center justify-content-center"
-                        style={{ padding: '15px 30px', fontSize: '18px', backgroundColor: '#333', borderColor: '#333', borderRadius: '50px', marginLeft: '10px' }}
+                        style={{ padding: '15px 30px', fontSize: '18px', backgroundColor: '#333', borderColor: '#333', borderRadius: '50px' }}
                       >
                          <i className="fas fa-comments me-2" />
                         Ask about this pet

@@ -118,4 +118,9 @@ body {
   .app-search input {
     width: 150px !important;
   }
+
+  /* Show backdrop overlay when sidebar is enabled */
+  body.sidebar-enable .sidebar-backdrop {
+    display: block !important;
+  }
 }

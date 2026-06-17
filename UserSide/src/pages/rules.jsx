@@ -72,7 +72,7 @@ function Rules() {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-8">
-              <div className="product__details-content p-5 shadow-lg border-0 rounded-4" style={{ backgroundColor: "#f9f6f9" }}>
+              <div className="product__details-content p-3 p-md-5 shadow-lg border-0 rounded-4" style={{ backgroundColor: "#f9f6f9" }}>
                 <div className="text-center mb-5">
                   <div className="display-6 fw-bold mb-2" style={{ color: "#8a4b8f" }}>Before You Adopt</div>
                   <p className="text-muted">Please read and agree to our adoption guidelines for <strong>{pet?.name || "this pet"}</strong></p>
