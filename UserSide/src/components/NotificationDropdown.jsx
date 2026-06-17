@@ -132,9 +132,11 @@ const NotificationDropdown = ({ isAdmin = false }) => {
             display: none !important;
           }
         `}} />
-        <i className="fa-regular fa-bell" style={{ fontSize: "28px" }} />
+        <i className="fa-regular fa-bell" style={{ fontSize: "22px" }} />
         {unreadCount > 0 && (
-          <span>{unreadCount}</span>
+          <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style={{ fontSize: "10px", transform: "translate(20%, -20%)" }}>
+            {unreadCount}
+          </span>
         )}
       </a>
 

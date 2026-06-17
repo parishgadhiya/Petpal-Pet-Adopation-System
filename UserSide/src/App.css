@@ -93,3 +93,38 @@
     padding: 60px 0 60px !important;
   }
 }
+
+/* ==========================================
+   Desktop Navbar Layout & Spacing Fixes
+   ========================================== */
+@media (min-width: 1200px) {
+  /* Fix spacing between Logo and first menu item (Home) */
+  .tgmenu__nav .logo {
+    margin-right: 50px !important;
+  }
+  
+  /* Additional insurance to prevent overlap */
+  .tgmenu__navbar-wrap {
+    margin-left: 20px !important;
+  }
+}
+
+/* Normalizing Action Controls list spacing and separator slashes */
+.tgmenu__action .list-wrap {
+  gap: 20px !important; /* Unified flexbox gap */
+}
+
+.tgmenu__action .list-wrap > li {
+  margin-left: 0 !important; /* Clear template's inline margin-left to prevent double spacing */
+}
+
+/* Adjust position of the rotated separator lines (slashes) to center them within the 20px gap */
+.tgmenu__action .list-wrap > li.header-cart::before {
+  left: -10px !important;
+}
+
+/* Remove separator slash before the first icon (Notification Bell) */
+.tgmenu__action .list-wrap > li.header-cart:first-child::before {
+  display: none !important;
+}
+

@@ -112,161 +112,145 @@ function Nav() {
           <div className="row">
             <div className="col-lg-12">
               <div className="tgmenu__wrap">
-                <div className="row align-items-center">
+                <nav className="tgmenu__nav" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', padding: '10px 0' }}>
                   {/* LOGO */}
-                  <div className="col-xl-2 col-6">
-                    <div className="logo text-start text-xl-center">
-                      <Link to="/">
-                        <img
-                          src="/petpal/assets/img/logo/w_logo.png"
-                          alt="Logo"
-                        />
-                      </Link>
-                    </div>
-                  </div>
-
-                  {/* MOBILE CONTROLS */}
-                  <div className="col-6 d-xl-none text-end">
-                    <div className="d-flex align-items-center justify-content-end gap-3">
-                      <div className="header-cart dropdown me-1 text-white" style={{ display: "inline-block" }}>
-                        <NotificationDropdown isAdmin={false} />
-                      </div>
-                      <Link to="/cart" className="me-2 text-white position-relative">
-                        <i className="flaticon-shopping-bag" style={{ fontSize: "20px" }} />
-                        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style={{ fontSize: "10px" }}>
-                          {cartCount}
-                        </span>
-                      </Link>
-                      <button className="btn btn-link text-white p-0" onClick={() => setIsMobileMenuOpen(true)}>
-                        <i className="fa-solid fa-bars" style={{ fontSize: "24px" }} />
-                      </button>
-                    </div>
+                  <div className="logo">
+                    <Link to="/">
+                      <img
+                        src="/petpal/assets/img/logo/w_logo.png"
+                        alt="Logo"
+                      />
+                    </Link>
                   </div>
 
                   {/* DESKTOP MENU */}
-                  <div className="col-xl-6 d-none d-xl-block">
-                    <div className="tgmenu__navbar-wrap tgmenu__main-menu d-flex">
-                      <ul className="navigation">
-                        <li className="menu-item-has-children">
-                          <a href="#">Home</a>
-                          <ul className="sub-menu">
-                            <li>
-                              <Link to="/PetCare">
-                                Pet Care &amp; Veterinary
-                              </Link>
-                            </li>
-                            <li>
-                              <Link to="/PetBreed">Pet Breed</Link>
-                            </li>
-                            <li>
-                              <Link to="/PetAdopt">Pet Adopt</Link>
-                            </li>
-                            <li>
-                              <Link to="/PetWoocommerce">pet Woocommerce</Link>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <Link to="/About">About</Link>
-                        </li>
-                        <li className="menu-item-has-children">
-                          <a href="#">Shop</a>
-                          <ul className="sub-menu">
-                            <li>
-                              <Link to="/Ourshop">Our Shop</Link>
-                            </li>
-                           
-                          </ul>
-                        </li>
-                        <li className="menu-item-has-children">
-                          <a href="#">Pages</a>
-                          <ul className="sub-menu">
-                            <li>
-                              <Link to="/Pets">All pets</Link>
-                            </li>
-                            <li>
-                              <Link to="/petdetails">Pet Details</Link>
-                            </li>
-                            <li>
-                              <Link to="/Gallery">Gallery</Link>
-                            </li>
-                           
-                            <li>
-                              <Link to="/DonatePet">DonatePet Page</Link>
-                            </li>
-                            <li>
-                              <Link to="/Ourteam">Our Team</Link>
-                            </li>
-                           
-                            <li>
-                              <Link to="/Ourblog">Our Blog</Link>
-                            </li>
-                            <li>
-                              <Link to="/Blogdetails">Blog Details</Link>
-                            </li>
-                           
-                          </ul>
-                        </li>
-                        <li>
-                          <Link to="/contact">Contacts</Link>
-                        </li>
-                        {user && (
-                          <li className="menu-item-has-children">
-                            <Link to="/MyOrders">My Orders</Link>
-                            <ul className="sub-menu">
-                              <li>
-                                <Link to="/PetStatus">My Requests</Link>
-                              </li>
-                              <li>
-                                <Link to="/MyAdoptedPets">Adopted Pets</Link>
-                              </li>
-                            </ul>
-                          </li>
-                        )}
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* DESKTOP RIGHT SIDE */}
-                  <div className="col-xl-4 d-none d-xl-block">
-                    <div className="tgmenu__action tgmenu__action-two">
-                      <ul className="list-wrap">
-                        <li className="header-cart dropdown">
-                          <NotificationDropdown isAdmin={false} />
-                        </li>
-                        <li className="header-cart">
-                          <Link to="/cart">
-                            <i className="flaticon-shopping-bag" />
-                            <span>{cartCount}</span>
-                          </Link>
-                        </li>
-
-                        <li className="header-cart">
-                          <Link to="/wishlist">
-                            <i className="flaticon-like" />
-                            <span>{wishlistCount}</span>
-                          </Link>
-                        </li>
-
-                        {!user ? (
-                          <li className="header-btn login-btn">
-                            <Link to="/login" className="btn">
-                              <i className="flaticon-locked" /> Login
+                  <div className="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
+                    <ul className="navigation">
+                      <li className="menu-item-has-children">
+                        <a href="#">Home</a>
+                        <ul className="sub-menu">
+                          <li>
+                            <Link to="/PetCare">
+                              Pet Care &amp; Veterinary
                             </Link>
                           </li>
-                        ) : (
-                          <li className="header-btn login-btn">
-                            <Link to="/UserProfile" className="btn">
-                              <i className="flaticon-user" style={{ marginRight: "5px" }} />
-                              {userData?.name || user.displayName || (user.email ? user.email.split('@')[0] : "Profile")}
-                            </Link>
+                          <li>
+                            <Link to="/PetBreed">Pet Breed</Link>
                           </li>
-                        )}
-                      </ul>
-                    </div>
+                          <li>
+                            <Link to="/PetAdopt">Pet Adopt</Link>
+                          </li>
+                          <li>
+                            <Link to="/PetWoocommerce">pet Woocommerce</Link>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <Link to="/About">About</Link>
+                      </li>
+                      <li className="menu-item-has-children">
+                        <a href="#">Shop</a>
+                        <ul className="sub-menu">
+                          <li>
+                            <Link to="/Ourshop">Our Shop</Link>
+                          </li>
+                         
+                        </ul>
+                      </li>
+                      <li className="menu-item-has-children">
+                        <a href="#">Pages</a>
+                        <ul className="sub-menu">
+                          <li>
+                            <Link to="/Pets">All pets</Link>
+                          </li>
+                          <li>
+                            <Link to="/petdetails">Pet Details</Link>
+                          </li>
+                          <li>
+                            <Link to="/Gallery">Gallery</Link>
+                          </li>
+                         
+                          <li>
+                            <Link to="/DonatePet">DonatePet Page</Link>
+                          </li>
+                          <li>
+                            <Link to="/Ourteam">Our Team</Link>
+                          </li>
+                         
+                          <li>
+                            <Link to="/Ourblog">Our Blog</Link>
+                          </li>
+                          <li>
+                            <Link to="/Blogdetails">Blog Details</Link>
+                          </li>
+                         
+                        </ul>
+                      </li>
+                      <li>
+                        <Link to="/contact">Contacts</Link>
+                      </li>
+                      {user && (
+                        <li className="menu-item-has-children">
+                          <Link to="/MyOrders">My Orders</Link>
+                          <ul className="sub-menu">
+                            <li>
+                              <Link to="/PetStatus">My Requests</Link>
+                            </li>
+                            <li>
+                              <Link to="/MyAdoptedPets">Adopted Pets</Link>
+                            </li>
+                          </ul>
+                        </li>
+                      )}
+                    </ul>
                   </div>
 
-                </div>
+                  {/* ACTION CONTROLS (Responsive) */}
+                  <div className="tgmenu__action tgmenu__action-two d-flex align-items-center">
+                    <ul className="list-wrap d-flex align-items-center mb-0 gap-3" style={{ listStyle: 'none' }}>
+                      <li className="header-cart dropdown text-white">
+                        <NotificationDropdown isAdmin={false} />
+                      </li>
+                      <li className="header-cart">
+                        <Link to="/cart" className="position-relative text-white">
+                          <i className="flaticon-shopping-bag" style={{ fontSize: "22px" }} />
+                          <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style={{ fontSize: "10px", transform: "translate(20%, -20%)" }}>
+                            {cartCount}
+                          </span>
+                        </Link>
+                      </li>
+
+                      <li className="header-cart d-none d-xl-block">
+                        <Link to="/wishlist" className="position-relative text-white">
+                          <i className="flaticon-like" style={{ fontSize: "22px" }} />
+                          <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style={{ fontSize: "10px", transform: "translate(20%, -20%)" }}>
+                            {wishlistCount}
+                          </span>
+                        </Link>
+                      </li>
+
+                      {!user ? (
+                        <li className="header-btn login-btn d-none d-xl-block">
+                          <Link to="/login" className="btn">
+                            <i className="flaticon-locked" /> Login
+                          </Link>
+                        </li>
+                      ) : (
+                        <li className="header-btn login-btn d-none d-xl-block">
+                          <Link to="/UserProfile" className="btn">
+                            <i className="flaticon-user" style={{ marginRight: "5px" }} />
+                            {userData?.name || user.displayName || (user.email ? user.email.split('@')[0] : "Profile")}
+                          </Link>
+                        </li>
+                      )}
+                    </ul>
+
+                    {/* MOBILE TOGGLER */}
+                    <div className="mobile-nav-toggler d-xl-none ms-3 text-white" onClick={() => setIsMobileMenuOpen(true)} style={{ cursor: "pointer", fontSize: "24px" }}>
+                      <i className="fa-solid fa-bars" />
+                    </div>
+                  </div>
+                </nav>
               </div>
             </div>
           </div>
